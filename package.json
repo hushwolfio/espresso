@@ -1,0 +1,56 @@
+{
+  "name": "template",
+  "version": "0.0.0",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "is-ci || husky install",
+    "preview": "vite preview",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,cjs}": [
+      "rome format --write",
+      "rome check"
+    ],
+    "*.{md,html,css,json,yml}": "prettier --write",
+    "!(*pnpm-lock).yaml": "prettier --write",
+    "package.json": "pnpm sort-package-json"
+  },
+  "dependencies": {
+    "@metamask/detect-provider": "^2.0.0",
+    "ethers": "^5.7.2",
+    "pnpm": "^8.6.0",
+    "rc-basic": "1.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.11.2",
+    "tilg": "0.1.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "@vitejs/plugin-react-swc": "3.3.1",
+    "antd": "^5.6.0",
+    "autoprefixer": "10.4.14",
+    "enzyme": "^3.11.0",
+    "husky": "8.0.3",
+    "is-ci": "3.0.1",
+    "lint-staged": "13.2.2",
+    "postcss": "8.4.23",
+    "prettier": "2.8.8",
+    "prettier-plugin-packagejson": "2.4.3",
+    "prettier-plugin-tailwindcss": "0.3.0",
+    "rome": "12.1.2",
+    "sort-package-json": "2.4.1",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4",
+    "vite": "4.3.8",
+    "vite-plugin-mkcert": "1.15.0"
+  }
+}
